@@ -1,13 +1,17 @@
-const emojiTable = document.getElementById("emoji-body");
-const searchBar = document.getElementById("search-bar");
-let emojiList = [];
+const emojiTable = document.getElementById("emojiBody");
+const searchBar = document.getElementById("search");
+let emojiLi = [];
 
-const emojiAliases = [];
+const emojiArray = [];
 const emojiTags = [];
-
 const emojiIndex = {};
 
-// Function to populate the table
+
+window.addEventListener("DOMContentLoaded", () => {
+  emojiLi = [...emojiList1];
+  displayEmojis(emojiList1);
+});
+
 function displayEmojis(emojiData) {
   emojiTable.innerHTML = "";
 
@@ -21,7 +25,7 @@ function displayEmojis(emojiData) {
     nameCell.textContent = data.description;
     categoryCell.textContent = data.category;
 
-    emojiAliases.push(...data.aliases);
+    emojiArray.push(...data.aliases);
     emojiTags.push(...data.tags);
 
     const searchableFields = [
@@ -40,26 +44,19 @@ function displayEmojis(emojiData) {
   });
 }
 
-// Function to reset the table to display the complete emoji list
+//--------------------- Function to reset the table 
 function resetTable() {
-  displayEmojis(emojiList);
+  displayEmojis(emojiLi);
 }
 
-// Initial display
-
-window.addEventListener("DOMContentLoaded", () => {
-  emojiList = [...emojiList1];
-  displayEmojis(emojiList1);
-});
-
-// Search functionality
+//------------------------------------- Search functionality
 searchBar.addEventListener("input", () => {
   const searchQuery = searchBar.value.toLowerCase();
 
   if (searchQuery === "") {
     resetTable();
   } else {
-    const searchResults = emojiList.filter((data) => {
+    const Results = emojiLi.filter((data) => {
       const lowerSearchQuery = searchQuery.toLowerCase();
       return (
         data.description.toLowerCase().includes(lowerSearchQuery) ||
@@ -71,18 +68,18 @@ searchBar.addEventListener("input", () => {
       );
     });
 
-    displayEmojis(searchResults);
+    displayEmojis(Results);
   }
 });
 
-const emojiPopup = document.getElementById("emoji-popup");
-const emojiChar = document.getElementById("emoji-char");
+const emojiPopup = document.getElementById("emojis");
+const emojiChar = document.getElementById("emojiChar");
 const speechSynthesis = window.speechSynthesis;
-const overlay = document.getElementById("overlay");
+const overlay = document.getElementById("over");
 
 emojiTable.addEventListener("mouseover", (event) => {
   if (event.target && event.target.tagName === "TD") {
-    const emojiData = emojiList.find(
+    const emojiData = emojiLi.find(
       (data) => data.emoji === event.target.textContent
     );
     if (emojiData) {

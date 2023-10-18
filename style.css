@@ -1,86 +1,89 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #05442ad3;
-    overflow-x: hidden;
-  }
+  font-family:cursive;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000ee;
+
+} 
+h1{
+  color: #d4ffee;
+  text-align: center;
+  margin: 0; 
+  text-decoration: underline;   
+} 
+#search{
+  width: 50%;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #0c4b32;
+  font-size: 1.6rem;
+  background-color: #96f5bb;
+  border-radius: 20px;
+} 
+#search::placeholder{
+  font-size: 1.3rem;
+}
+#tableContainer{
+  overflow: auto;
+  width: 50%;
+  max-height: 80vh; 
+
+} 
+#table {
+  width: 100%;
+}
   
-  header {
-    background-color: #05442a;
-    color: #aff8dc;
-    text-align: center;
-    padding: 20px 0;
-  }
+#table th {
+  background-color: #07412d;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.6rem;    
+}
   
-  h1 {
-    margin: 0;
-  }
+#table th,
+#table td {
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #96f5bb;    
+}
   
-  #search-bar {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: #0c4b32;
-    font-size: 1.6rem;
-    background-color: #96f5bb;
-  }
-  
-  #table-container {
-    overflow: auto;
-    width: 100%;
-    max-height: 80vh;
-  }
-  
-  #emoji-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  #emoji-table th {
-    background-color: #07412d;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: 1.6rem;
-  }
-  
-  #emoji-table th,
-  #emoji-table td {
-    border: 1px solid #ccc;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    color: #96f5bb;
-  }
-  
-  #emoji-table td {
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 999;
-  }
-  
-  .emoji-popup {
-    position: fixed;
-    display: none;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    background: rgb(255, 255, 255);
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 48px;
-  }
+#table td {
+  text-align: center;
+  padding: 10px;    
+}
+.over {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;    
+}
+.emojis {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 48px;    
+}

@@ -7,27 +7,27 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>
+    <div class="container">
       <h1>Emoji Search</h1>
-      <input type="text" id="search-bar" placeholder="🔍Search for emojis..." />
-    </header>
-    <div id="table-container">
-      <table id="emoji-table">
-        <thead>
-          <tr>
-            <th>Emoji</th>
-            <th>Name</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody id="emoji-body"></tbody>
-      </table>
+        <input type="text" id="search" placeholder="🔍Search for emojis..." />
+      <div id="tableContainer">
+        <table id="table">
+          <thead>
+            <tr>
+              <th>Emoji</th>
+              <th>Name</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody id="emojiBody"></tbody>
+        </table>
+      </div>
+      <div id="emojis" class="emojis">
+        <span id="emojiChar"></span>
+      </div>
+  
+      <div id="over" class="over"></div>
     </div>
-    <div id="emoji-popup" class="emoji-popup">
-      <span id="emoji-char"></span>
-    </div>
-
-    <div id="overlay" class="overlay"></div>
 
     <script src="./emosy.js"></script>
     <script src="./script.js"></script>
